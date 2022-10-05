@@ -3,7 +3,7 @@ package com.bridgelabz.UC2lastname;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class UserRegistration {
+public class UserRegistrationEmail {
 	Scanner sc = new Scanner(System.in);
 
 	public void firstNameCheck() {
@@ -22,6 +22,7 @@ public class UserRegistration {
 		System.out.println("Welcome to User Registration Program");
 		user.firstNameCheck();
 		user.lastNameCheck();
+		user.email();
 	}
 
 	public void lastNameCheck() {
@@ -36,7 +37,13 @@ public class UserRegistration {
 	}
 
 	public void email() {
-		// TODO Auto-generated method stub
-		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Email of User: ");
+		String eMail = sc.next();
+		boolean check = Pattern.matches("^[a-z]*([.]?[a-z]+)*@bl[.]co([.]?in)*", eMail);
+		if (check)
+			System.out.println("Perfect! Email!");
+		else
+			System.out.println("Please Enter a Valid Email");
 	}
 }
